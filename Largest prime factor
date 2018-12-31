@@ -1,35 +1,36 @@
-public class Euler_3 {
+public class Euler_3_4 {
     /**
      * The prime factors of 13195 are 5, 7, 13 and 29.
-     *
+     * <p>
      * What is the largest prime factor of the number 600851475143 ?
-     *
-     * **/
+     **/
 
     public static void main(String[] args) {
 
-        final long SIZE = 52;
-        int largestPrime = 2;
+        final long SIZE = 600851475143L;
+        //  final long SIZE = 971437;
 
-        for (int i = 2; i <= SIZE; i++) {
 
-            if (SIZE % i == 0){
+        long largestPrime = 2;
 
-                if (isPrime(i)){
+        for (long i = 2; i <= Math.sqrt(SIZE); i++) {
+
+            if (SIZE % i == 0) {
+                if (isPrime(i)) {
                     largestPrime = i;
                 }
             }
         }
 
-        System.out.printf("Largest Prime: %d\n",largestPrime);
+        System.out.printf("Largest Prime: %d\n", largestPrime);
 
     }
 
-    static boolean isPrime (int n) {
+    static boolean isPrime(long n) {
 
-        for (int i = 2; i < n; i++) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
 
-            if (n % i == 0){
+            if (n % i == 0) {
                 return false;
             }
         }
@@ -38,3 +39,4 @@ public class Euler_3 {
     }
 
 }
+
