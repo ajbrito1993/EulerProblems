@@ -1,0 +1,25 @@
+public class Euler_5_2 {
+
+    /**
+     * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+     * <p>
+     * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+     **/
+
+    public static void main(String[] args) {
+
+        int START = 2;
+        final int HIGHESTFACTOR = 20;
+
+
+        for (int i = HIGHESTFACTOR; i >= 2; i--) {
+
+            if (START % i != 0) {
+                START += 2;
+                i = 20;
+            }
+        }
+        System.out.println(START);
+
+    }
+}
